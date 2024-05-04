@@ -3,3 +3,10 @@
 *::before {
   box-sizing: border-box;
 }
+
+/* include border and padding in width */
+
+:root {
+    font-size: 14px;
+    --color-bg: #36454F;
+}
