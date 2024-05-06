@@ -1,0 +1,19 @@
+.container__works::before {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+  background-size: 35px 35px; /* Adjust the size of the grid squares */
+}
+
+.container__works::after {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+  background-size: 35px 35px; /* Adjust the size of the grid squares */
+}

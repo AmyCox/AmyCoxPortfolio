@@ -9,9 +9,243 @@
 :root {
   font-size: 14px;
   --color-bg: #36454f;
+  --color-primary: black;
+  --color-secondary: #eee5e0;
+  --color-text: black;
+  --page-padding: 1.5rem;
 }
 
 body {
   margin: 0;
   background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-size: 10rem;
+  margin: 0;
+  color: var(--color-secondary);
+}
+
+.container {
+  /* padding: var(--page-padding); */
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  z-index: 1000;
+  width: 100%;
+  grid-row-gap: 1rem;
+  grid-column-gap: 2rem;
+  justify-items: start;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:
+    "year title menu"
+    "position position image"
+    "works works circle"
+    "skills2 description description"
+    "work work work";
+}
+
+.container__header {
+  grid-area: site;
+}
+
+.container__year {
+  grid-area: year;
+}
+
+.container__menu {
+  grid-area: menu;
+}
+
+.container__second {
+  grid-area: second;
+}
+
+.container__title {
+  grid-area: title;
+}
+
+.container__position {
+  grid-area: position;
+}
+
+.container__image {
+  grid-area: image;
+}
+
+.container__works {
+  position: relative;
+  grid-area: works;
+  display: grid;
+  background-color: var(--color-secondary);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.container__works::before,
+.container__works::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+.container__works::before {
+  z-index: 1; /* Ensure it's above the curved-corner divs */
+  background-image: 
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 1px,
+      transparent 1px
+    );
+  background-size:40px 40px; /* Adjust the size of the grid squares */
+}
+
+.container__works::after {
+  z-index: 1; /* Ensure it's above the curved-corner divs */
+  background-image: 
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px; /* Adjust the size of the grid squares */
+}
+
+
+.image {
+  grid-area: image;
+  background-color: red;
+  height: 100%;
+  width: 100%;'
+}
+
+
+.container__description {
+  grid-area: description;
+}
+
+.skills2 {
+  grid-area: skills2;
+}
+
+.curved-corner {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 3;
+  background-color: var(--color-secondary);
+}
+
+.curved-corner:before {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  border-radius: 50%;
+  background-image: 
+  linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 1px
+  ),
+  linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 1px
+  );
+background-size: 40px 40px; /* Adjust the size of the grid squares */
+}
+
+#curved-corner-bottomleft,
+#curved-corner-bottomright,
+#curved-corner-topleft,
+#curved-corner-topright {
+  width: 8vw;
+  overflow: hidden;
+  position: relative;
+}
+#curved-corner-bottomleft:before,
+#curved-corner-bottomright:before,
+#curved-corner-topleft:before,
+#curved-corner-topright:before {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  border-radius: 50%;
+}
+#curved-corner-bottomleft:before {
+  bottom: 0;
+  left: 0;
+  box-shadow: -50px 50px 0 0 var(--color-bg);
+}
+#curved-corner-bottomright:before {
+  bottom: 0;
+  right: 0;
+  box-shadow: 50px 50px 0 0 var(--color-bg);
+}
+#curved-corner-topleft:before {
+  top: 0;
+  left: 0;
+  box-shadow: -50px -50px 0 0 var(--color-bg);
+}
+#curved-corner-topright:before {
+  top: 0;
+  right: 0;
+  box-shadow: 50px -50px 0 0 var(--color-bg);
+}
+@media screen and (min-width: 53em) {
+  body {
+    --page-padding: 2.5rem;
+  }
+  .container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 10% 25% 30% 1fr 1fr;
+    grid-template-rows: 5% 15% 10% 40% auto;
+    /* align-content: space-between; */
+    grid-template-areas:
+      "year title .... .... menu"
+      ".... position position position position"
+      ".... description skills2 image image"
+      "works works works circle ...."
+      "content content content content content";
+  }
+  /* .container__contact {
+    padding-top: 3rem;
+  }
+  .container__links {
+    gap: 2rem;
+  }
+  .container__works {
+    margin-bottom: 10vh;
+  }
+  .container__title-main {
+    grid-area: 5 / 3 / 2 / 6;
+  } */
 }
