@@ -11,7 +11,7 @@
   --color-bg: #36454f;
   --color-primary: black;
   --color-secondary: #eee5e0;
-  --color-text: black;
+  --color-text: #eee5e0;
   --page-padding: 1.5rem;
 }
 
@@ -25,7 +25,11 @@ body {
 h1 {
   font-size: 10rem;
   margin: 0;
+  font-family: "Anton", sans-serif;
+  font-weight: 900;
+  font-style: normal;
   color: var(--color-secondary);
+  letter-spacing: 0.03em; /* Adjust the value as needed */
 }
 
 .container {
@@ -37,7 +41,7 @@ h1 {
   width: 100%;
   grid-row-gap: 1rem;
   grid-column-gap: 2rem;
-  justify-items: start;
+  /* justify-items: start; */
   grid-template-columns: auto auto auto;
   grid-template-areas:
     "year title menu"
@@ -53,6 +57,9 @@ h1 {
 
 .container__year {
   grid-area: year;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container__menu {
@@ -70,6 +77,15 @@ h1 {
 .container__position {
   grid-area: position;
 }
+
+
+@media (max-width: 1370px) {
+  .container__position > * {
+    font-size: 5em; /* Make the contents half the size */
+    /* Additional styles for the contents at this width */
+  }
+}
+
 
 .container__works {
   position: relative;
@@ -122,7 +138,7 @@ h1 {
 
 .container__works .image {
   grid-area: image;
-  background-image: url("./../../images/me.JPG");
+  background-image: url("./../images/me.JPG");
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -141,7 +157,7 @@ h1 {
   overflow: hidden;
   position: absolute;
   top: 0;
-  
+
   z-index: 3;
   background-color: var(--color-secondary);
 }
@@ -256,4 +272,68 @@ h1 {
   .container__title-main {
     grid-area: 5 / 3 / 2 / 6;
   } */
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: #6fcdc5; /* Background color for visualization */
+  border-radius: 50%; /* Make it a circle */
+  grid-area: sticker1;
+  z-index: 50;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+}
+
+.yellow-rectangle {
+  width: 200px;
+  height: 60px;
+  background-color: #f2d20d; /* Background color for visualization */
+  grid-area: sticker1;
+  z-index: 50;
+  position: absolute;
+  top: 150px;
+  left: 25%;
+  transform: rotate(-8deg);
+  border-radius: 10px;
+}
+
+.orange-rectangle {
+  width: 200px;
+  height: 60px;
+  background-color: #f2a541; /* Background color for visualization */
+  grid-area: sticker4;
+  z-index: 50;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: rotate(8deg);
+  border-radius: 10px;
+}
+
+.pink-rectangle {
+  width: 180px;
+  height: 60px;
+  background-color: #ec3e65; /* Background color for visualization */
+  grid-area: sticker3;
+  z-index: 50;
+  position: absolute;
+  top: 100px;
+  left: 5%;
+  transform: rotate(8deg);
+  border-radius: 10px;
+}
+
+.green-circle {
+  width: 110px;
+  height: 110px;
+  background-color: #a5dc73; /* Background color for visualization */
+  grid-area: sticker6;
+  z-index: 50;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: rotate(-8deg);
+  border-radius: 50%;
 }
