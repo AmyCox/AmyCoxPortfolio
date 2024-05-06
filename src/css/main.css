@@ -83,6 +83,8 @@ h1 {
   height: 100%;
   width: 100%;
   z-index: 1;
+  /* grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr); */
 }
 
 .container__works::before,
@@ -130,12 +132,20 @@ h1 {
   background-size: 40px 40px; /* Adjust the size of the grid squares */
 }
 
+.container__works .image {
+  grid-column: 1/ span 1; /* Span 2 columns */
+  grid-row: 1/ span 1; /* Span 2 rows */
+  background-image: url('./../../images/me.JPG');
+  background-size: cover;
+  background-position: center;
+}
+
 
 .image {
   grid-area: image;
   background-color: red;
   height: 100%;
-  width: 100%;'
+  width: 100%;
 }
 
 
@@ -159,8 +169,7 @@ h1 {
 .curved-corner:before {
   content: "";
   display: block;
-  width: 200%;
-  height: 200%;
+
   position: absolute;
   border-radius: 50%;
   background-image: 
@@ -181,7 +190,7 @@ background-size: 40px 40px; /* Adjust the size of the grid squares */
 #curved-corner-bottomright,
 #curved-corner-topleft,
 #curved-corner-topright {
-  width: 8vw;
+  width: 12vw;
   overflow: hidden;
   position: relative;
 }
@@ -199,12 +208,12 @@ background-size: 40px 40px; /* Adjust the size of the grid squares */
 #curved-corner-bottomleft:before {
   bottom: 0;
   left: 0;
-  box-shadow: -50px 50px 0 0 var(--color-bg);
+  box-shadow: -70px 70px 0 0 var(--color-bg);
 }
 #curved-corner-bottomright:before {
   bottom: 0;
   right: 0;
-  box-shadow: 50px 50px 0 0 var(--color-bg);
+  box-shadow: 70px 70px 0 0 var(--color-bg);
 }
 #curved-corner-topleft:before {
   top: 0;
@@ -214,7 +223,7 @@ background-size: 40px 40px; /* Adjust the size of the grid squares */
 #curved-corner-topright:before {
   top: 0;
   right: 0;
-  box-shadow: 50px -50px 0 0 var(--color-bg);
+  box-shadow: 70px -70px 0 0 var(--color-bg);
 }
 @media screen and (min-width: 53em) {
   body {
@@ -233,7 +242,7 @@ background-size: 40px 40px; /* Adjust the size of the grid squares */
       "year title .... .... menu"
       ".... position position position position"
       ".... description skills2 image image"
-      "works works works circle ...."
+      "works works works .... ...."
       "content content content content content";
   }
   /* .container__contact {
