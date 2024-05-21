@@ -78,14 +78,12 @@ h1 {
   grid-area: position;
 }
 
-
 @media (max-width: 1370px) {
   .container__position > * {
     font-size: 5em; /* Make the contents half the size */
     /* Additional styles for the contents at this width */
   }
 }
-
 
 .container__works {
   position: relative;
@@ -336,4 +334,26 @@ h1 {
   left: 50%;
   transform: rotate(-8deg);
   border-radius: 50%;
+}
+
+.sticker-container-narrow {
+  display: flex;
+  flex-direction: column;
+}
+
+.sticker-container-narrow > div {
+  scale: 0.5;
+  position: static;
+}
+
+@media only screen and (max-width: 600px) {
+  .sticker-container-wide {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sticker-container-narrow {
+    display: none;
+  }
 }
