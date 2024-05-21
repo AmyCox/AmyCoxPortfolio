@@ -45,7 +45,7 @@ h1 {
   grid-template-columns: auto auto auto;
   grid-template-areas:
     "year title menu"
-    "position position ...."
+    "position position contact"
     "works works circle"
     "skills2 description description"
     "work work work";
@@ -121,7 +121,7 @@ h1 {
       rgba(0, 0, 0, 0.3) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+    linear-gradient(to bottom, rgb(178,169,164, 0.3) 1px, transparent 1px);
   background-size: 40px 40px; /* Adjust the size of the grid squares */
 }
 
@@ -129,10 +129,10 @@ h1 {
   z-index: 1; /* Ensure it's above the curved-corner divs */
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.3) 1px,
+      rgb(178,169,164, 0.3) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+    linear-gradient(to bottom, rgb(178,169,164, 0.3) 1px, transparent 1px);
   background-size: 40px 40px; /* Adjust the size of the grid squares */
 }
 
@@ -173,7 +173,7 @@ h1 {
       rgba(0, 0, 0, 0.3) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+    linear-gradient(to bottom, rgb(178,169,164, 0.3) 1px, transparent 1px);
   background-size: 40px 40px; /* Adjust the size of the grid squares */
 }
 
@@ -301,7 +301,7 @@ h1 {
 
 .orange-rectangle {
   width: 200px;
-  height: 60px;
+  height: 80px;
   background-color: #f2a541; /* Background color for visualization */
   grid-area: sticker4;
   z-index: 50;
