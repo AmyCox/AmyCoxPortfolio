@@ -53,8 +53,9 @@ h1 {
 .container__year {
   grid-area: year;
   display: flex;
-  justify-content: center;
+  
   align-items: center;
+  margin-left: 5%;
 }
 
 .container__menu {
