@@ -60,6 +60,14 @@ h1 {
 
 .container__menu {
   grid-area: menu;
+  display: flex;
+  align-items: center ;
+}
+
+.container__menu a {
+  color: var(--color-text);
+  text-decoration: none;
+  margin-right: 1rem;
 }
 
 .container__second {
