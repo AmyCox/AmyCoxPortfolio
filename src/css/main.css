@@ -53,7 +53,7 @@ h1 {
 .container__year {
   grid-area: year;
   display: flex;
-  
+
   align-items: center;
   margin-left: 5%;
 }
@@ -61,7 +61,7 @@ h1 {
 .container__menu {
   grid-area: menu;
   display: flex;
-  align-items: center ;
+  align-items: center;
 }
 
 .container__menu a {
@@ -374,6 +374,10 @@ h1 {
   align-items: center; /* Align items horizontally in the center */
 }
 
+.button-container {
+  display: none;
+}
+
 /* .sticker-container-narrow > div {
   scale: 0.5;
 } */
@@ -529,14 +533,51 @@ h1 {
       linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
     background-size: 40px 40px; /* Adjust the size of the grid squares */
   }
-  .sticker1 {
-    grid-area: sticker1;
-    position: relative;
-
-    width: 100%;
-    background-color: blue;
+  .first-sticker-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2; /* Ensure buttons are above container__wide */
   }
+
+  .sticker1 {
+    width: 100px;
+    height: 30px;
+    background-color: #f2d20d;
+    border-radius: 10px;
+
+    z-index: 50;
+    transform: rotate(-8deg);
+  }
+  .sticker2 {
+    width: 60px;
+    height: 60px;
+    background-color: #f2a541;
+    border-radius: 50%;
+
+    z-index: 50;
+    transform: rotate(8deg);
+    margin-left: auto;
+   
+
+  }
+
+  .sticker3 {
+    width: 100px;
+    height: 30px;
+    background-color: #ec3e65;
+    border-radius: 10px;
+
+    z-index: 50;
+    transform: rotate(-8deg);
+    
+  }
+
   .image2 {
     grid-area: image2;
     background-image: url("./../images/me.JPG");
@@ -557,7 +598,7 @@ h1 {
       "year title menu"
       "position position position"
       "works works works"
-      "description skills2 ....";
+      "description skills2 skills2";
 
     grid-template-rows: 5% 25% 35% 5%;
     position: relative;
@@ -575,6 +616,7 @@ h1 {
     display: none;
   }
 
+
   .container__wide {
     position: relative;
     grid-area: works;
@@ -587,17 +629,9 @@ h1 {
     grid-template-rows: auto auto;
     grid-template-areas:
       "sticker1 image2 sticker3"
-      "sticker4 image2 sticker6";
+      "sticker1 image2 sticker6";
   }
-  .sticker1 {
-    grid-area: sticker1;
-    position: relative;
-    z-index: 1000;
 
-    width: 100%;
-    background-color: blue;
-    height: 100%;
-  }
   .image2 {
     grid-area: image2;
     background-image: url("./../images/me.JPG");
@@ -605,6 +639,17 @@ h1 {
     width: 100%;
     background-size: cover;
     background-position: right;
+    border-radius: 5px;
+  }
+
+  .button {
+    margin: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
   .sticker-container-narrow {
@@ -622,7 +667,7 @@ h1 {
       "year title menu"
       "position position position"
       "works works works"
-      "description skills2 ....";
+      "description skills2 skills2";
 
     grid-template-rows: 5% 25% 45% 5%;
     position: relative;
@@ -640,10 +685,10 @@ h1 {
     width: 70%;
     z-index: 1;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "sticker1 image2 sticker3"
-      "sticker4 image2 sticker6";
+      "sticker1 image2 sticker6";
   }
   #curved-corner-bottomleft,
   #curved-corner-bottomright,
