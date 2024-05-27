@@ -24,13 +24,12 @@ body {
 
 h1 {
   font-size: 3.8rem;
-  margin: 0;
+  margin-left: 5%;
   font-family: "Anton", sans-serif;
   font-weight: 900;
   font-style: normal;
   color: var(--color-secondary);
   letter-spacing: 0.03em; /* Adjust the value as needed */
-
 }
 
 /* Base styles for mobile first */
@@ -489,10 +488,41 @@ h1 {
       "sticker1 image2 sticker3"
       "sticker4 image2 sticker6";
   }
+  .container__wide::before,
+  .container__wide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .container__wide::before {
+    z-index: 1; /* Ensure it's above the curved-corner divs */
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px; /* Adjust the size of the grid squares */
+  }
+
+  .container__wide::after {
+    z-index: 1; /* Ensure it's above the curved-corner divs */
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px; /* Adjust the size of the grid squares */
+  }
   .sticker1 {
     grid-area: sticker1;
     position: relative;
-    z-index: 1000;
 
     width: 100%;
     background-color: blue;
@@ -518,10 +548,9 @@ h1 {
       "year title menu"
       "position position position"
       "works works works"
-      "description description description"
-      "skills2 skills2 skills2";
+      "description skills2 ....";
 
-    grid-template-rows: 5% 25% 35% 5% 5%;
+    grid-template-rows: 5% 25% 35% 5%;
     position: relative;
     min-height: 100vh;
     width: 100%;
@@ -574,46 +603,45 @@ h1 {
   }
 }
 
-@media screen and (min-width:1075px) {
- h1 {
-  font-size: 1.8em;
-  margin-left:  5%;
- }
- .container {
-  grid-template-areas:
-    "year title menu"
-    "position position position"
-    "works works works"
-    "description description description"
-    "skills2 skills2 skills2";
+@media screen and (min-width: 1075px) {
+  h1 {
+    font-size: 1.8em;
+    margin-left: 5%;
+  }
+  .container {
+    grid-template-areas:
+      "year title menu"
+      "position position position"
+      "works works works"
+      "description skills2 ....";
 
-  grid-template-rows: 5% 25% 45% 5% 5%;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.container__wide {
-  position: relative;
-  grid-area: works;
-  display: grid;
-  background-color: var(--color-secondary);
-  height: 100%;
-  width: 70%;
-  z-index: 1;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "sticker1 image2 sticker3"
-    "sticker4 image2 sticker6";
-}
-#curved-corner-bottomleft,
-#curved-corner-bottomright,
-#curved-corner-topleft,
-#curved-corner-topright {
-  width: 20vw;
-  overflow: hidden;
-  position: relative;
-}
+    grid-template-rows: 5% 25% 45% 5%;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container__wide {
+    position: relative;
+    grid-area: works;
+    display: grid;
+    background-color: var(--color-secondary);
+    height: 100%;
+    width: 70%;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "sticker1 image2 sticker3"
+      "sticker4 image2 sticker6";
+  }
+  #curved-corner-bottomleft,
+  #curved-corner-bottomright,
+  #curved-corner-topleft,
+  #curved-corner-topright {
+    width: 10vw;
+    overflow: hidden;
+    position: relative;
+  }
 }
