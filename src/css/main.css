@@ -85,6 +85,10 @@ h1 {
   align-items: center;
 }
 
+.container__wide {
+  display: none;
+}
+
 .container__works {
   position: relative;
   grid-area: works;
@@ -487,6 +491,9 @@ h1 {
   h1 {
     margin-left: 5%;
   }
+  .sticker {
+    scale: 0.7
+  }
 
   .container__wide {
     position: relative;
@@ -554,6 +561,7 @@ h1 {
     margin-left: 10%;
     z-index: 50;
     transform: rotate(-8deg);
+   
   }
   .sticker2 {
     width: 150px;
@@ -565,7 +573,6 @@ h1 {
     transform: rotate(8deg);
     margin-left: 50%;
   }
-
 
   .green-circle {
     width: 100px;
@@ -594,7 +601,7 @@ h1 {
     background-color: #73b8dc; /* Background color for visualization */
     z-index: 50;
     margin-left: 50%;
-
+    margin-bottom: -15%;
   }
 
   .second-sticker-container {
@@ -622,12 +629,10 @@ h1 {
     height: 65px;
     border-radius: 10%;
     background-color: #a573dc; /* Background color for visualization */
-  
+
     transform: rotate(-15deg);
     margin-left: 45%;
     z-index: 50;
-
-
   }
 
   .image2 {
@@ -666,6 +671,9 @@ h1 {
   }
   .container__works {
     display: none;
+  }
+  .sticker {
+    scale: 1;
   }
 
   .container__wide {
