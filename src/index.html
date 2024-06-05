@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
   <div class="container">
     <div id="overlay" class="overlay">
       <div class="overlay-content">
@@ -55,21 +56,21 @@
         </div> -->
         <div class="first-sticker-container">
           <!-- <div class="sticker sticker1"> <p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">side8</p></div> -->
-          <a href="https://side8.io" class="sticker sticker1">
+          <a href="https://side8.io" target="_blank" class="sticker sticker1">
             <p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">side8</p>
         </a>
-          <button id="iownaButton" class="sticker sticker2"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">iowna</p></button>
+          <button id="iownaButton" class="sticker sticker2"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">iOWNA</p></button>
    
-          <a href="https://github.com/AmyCox" class="sticker green-circle"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">github</p></a>
+          <a href="https://github.com/AmyCox" target="_blank" class="sticker green-circle"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">github</p></a>
         </div>
         <div class="image2"></div>
         <div class="second-sticker-container">
-          <div class="sticker sticker3"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">codepen</p></div>
-          <div class="sticker blue-circle"><p style="font-size: 1.5em;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">leetcode</p></div>
+          <a href="https://codepen.io/amywritescode" target="_blank" class="sticker sticker3"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">codepen</p></a>
+          <a href="https://leetcode.com/u/amyleetcode/" target="_blank" class="sticker blue-circle"><p style="font-size: 1.5em;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">leetcode</p></a>
         </div>
         <div class="third-sticker-container">
           
-          <div class="sticker purple-square"><p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">medium</p></div>
+          <a href="https://medium.com/@amywritescode/about" target="_blank" class="sticker purple-square"><p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">medium</p></a>
         </div>
 
      <div class="curved-corner" id="curved-corner-topright"></div>
@@ -81,21 +82,24 @@
 
     <div class="sticker-container-narrow">
       <div class="column-1">
-      <div class="yellow-rectangle"><p style="color: black; font-size: 1.5em;">side8</p></div>
-      <div class="orange-rectangle"><p style="color: black; font-size: 1.5em">iowna</p></div> 
-      <div class="green-circle"><p style="color: black; font-size: 1.5em">github</p></div>
+      <a href="https://side8.io" target="_blank" class="yellow-rectangle"><p style="color: black; font-size: 1.5em;">side8</p></a>
+
+      <!-- <button id="iownaButton" class="orange-rectangle"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">iOWNA</p></button> -->
+
+      <a href="https://github.com/AmyCox" target="_blank" class="green-circle"><p style="color: black; font-size: 1.5em">github</p></a>
 
     </div>
     <div class="column-2">
-      <div class="pink-rectangle"> <p style="color: black; font-size: 1.5em">codepen</p></div>
-      <div class="blue-circle"><p style="color: black; font-size: 1.5em">leetcode</p></div>
-      <div class="purple-rectangle"><p style="color: black; font-size: 1.2em">medium</p></div>
+      <a href="https://codepen.io/amywritescode" target="_blank" class="pink-rectangle"> <p style="color: black; font-size: 1.5em">codepen</p></a>
+      <a href="https://leetcode.com/u/amyleetcode/" target="_blank" class="blue-circle"><p style="color: black; font-size: 1.5em">leetcode</p></a>
+      <a href="https://medium.com/@amywritescode/about" target="_blank" class="purple-rectangle"><p style="color: black; font-size: 1.2em">medium</p></a>
 
     </div>
 
     <script src="https://kit.fontawesome.com/87ad5d7072.js" crossorigin="anonymous"></script>
 <script>
   document.getElementById("iownaButton").addEventListener("click", function() {
+    console.log('gets here')
     document.getElementById("overlay").style.display = "block";
 });
 
