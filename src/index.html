@@ -19,6 +19,13 @@
 
 <body>
   <div class="container">
+    <div id="overlay" class="overlay">
+      <div class="overlay-content">
+          <span class="close" id="closeButton">&times;</span>
+          <img style="width: 20%" src="./images/iowna.png" alt="iowna Project Image">
+          <p style="color: black">Most recently working as a front end developer on the <a href="https://iowna.com/">iOWNA app</a> using react native and expo </p>
+      </div>
+  </div>
     <div class="container__year">
       <p>2024</p>
     </div>
@@ -47,9 +54,12 @@
          
         </div> -->
         <div class="first-sticker-container">
-          <div class="sticker sticker1"> <p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">side8</p>
-          </div>
-          <div class="sticker sticker2"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">iowna</p></div>
+          <!-- <div class="sticker sticker1"> <p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">side8</p></div> -->
+          <a href="https://side8.io" class="sticker sticker1">
+            <p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">side8</p>
+        </a>
+          <button id="iownaButton" class="sticker sticker2"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">iowna</p></button>
+   
           <div class="sticker green-circle"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">github</p></div>
         </div>
         <div class="image2"></div>
@@ -84,7 +94,15 @@
     </div>
 
     <script src="https://kit.fontawesome.com/87ad5d7072.js" crossorigin="anonymous"></script>
+<script>
+  document.getElementById("iownaButton").addEventListener("click", function() {
+    document.getElementById("overlay").style.display = "block";
+});
 
+document.getElementById("closeButton").addEventListener("click", function() {
+    document.getElementById("overlay").style.display = "none";
+});
+</script>
 </body>
 
 </html>
