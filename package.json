@@ -1,0 +1,30 @@
+{
+  "name": "amycoxportfolio",
+  "version": "1.0.0",
+  "description": "A brief roundup of what I've worked on",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmyCox/amycoxportfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Amy Cox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmyCox/amycoxportfolio/issues"
+  },
+  "homepage": "https://github.com/AmyCox/amycoxportfolio#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

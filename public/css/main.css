@@ -1,0 +1,823 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* include border and padding in width */
+
+:root {
+  font-size: 14px;
+  --color-bg: #36454f;
+  --color-primary: black;
+  --color-secondary: #eee5e0;
+  --color-text: #eee5e0;
+  --page-padding: 1.5rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-size: 3.8rem;
+  margin-left: 5%;
+  font-family: "Anton", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: var(--color-secondary);
+  letter-spacing: 0.03em; /* Adjust the value as needed */
+}
+
+/* Base styles for mobile first */
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 5% 25% 25% auto auto 35%;
+  grid-template-areas:
+    "year title menu"
+    "position position position"
+    "works works works"
+    "description description description"
+    "skills2 skills2 skills2"
+    "gigs gigs gigs";
+}
+
+.container__year {
+  grid-area: year;
+  display: flex;
+
+  align-items: center;
+  margin-left: 5%;
+}
+
+.container__menu {
+  grid-area: menu;
+  display: flex;
+  align-items: center;
+}
+
+.container__menu a {
+  color: var(--color-text);
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.container__second {
+  grid-area: second;
+}
+
+.container__title {
+  grid-area: title;
+}
+
+.container__position {
+  grid-area: position;
+  font-size: 5em;
+  display: flex;
+  align-items: center;
+}
+
+.container__wide {
+  display: none;
+}
+
+.container__works {
+  position: relative;
+  grid-area: works;
+  display: grid;
+  background-color: var(--color-secondary);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "image image image"
+    "image image image";
+}
+
+.container__works::before,
+.container__works::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.container__works::before {
+  z-index: 1; /* Ensure it's above the curved-corner divs */
+  background-image: linear-gradient(
+      to right,
+      rgba(178, 169, 164, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(178, 169, 164, 0.3) 1px, transparent 1px);
+  background-size: 40px 40px; /* Adjust the size of the grid squares */
+}
+
+.container__works::after {
+  z-index: 1; /* Ensure it's above the curved-corner divs */
+  background-image: linear-gradient(
+      to right,
+      rgb(178, 169, 164, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(178, 169, 164, 0.3) 1px, transparent 1px);
+  background-size: 40px 40px; /* Adjust the size of the grid squares */
+}
+
+.container__works .image {
+  grid-area: image;
+  background-image: url("../images/me.jpg");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.container__description {
+  grid-area: description;
+  margin-left: 15px;
+}
+
+.skills2 {
+  grid-area: skills2;
+  margin-left: 15px;
+}
+
+.curved-corner {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+
+  z-index: 3;
+  background-color: var(--color-secondary);
+}
+
+.curved-corner:before {
+  content: "";
+  display: block;
+
+  position: absolute;
+  border-radius: 50%;
+  background-image: linear-gradient(
+      to right,
+      rgba(178, 169, 164, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(178, 169, 164, 0.3) 1px, transparent 1px);
+  background-size: 40px 40px; /* Adjust the size of the grid squares */
+}
+
+#curved-corner-topleft {
+  grid-area: sticker1;
+  position: relative;
+  z-index: 3;
+}
+
+#curved-corner-topright {
+  grid-area: sticker3;
+  position: relative;
+  z-index: 3;
+  justify-self: end;
+  align-self: start;
+  height: 100%;
+}
+
+#curved-corner-bottomleft {
+  grid-area: sticker2;
+  position: relative;
+  z-index: 3;
+}
+
+#curved-corner-bottomright {
+  grid-area: sticker6;
+  position: relative;
+  z-index: 3;
+  justify-self: end;
+  align-self: start;
+  height: 100%;
+}
+
+#curved-corner-bottomleft,
+#curved-corner-bottomright,
+#curved-corner-topleft,
+#curved-corner-topright {
+  width: 15vw;
+  overflow: hidden;
+  position: relative;
+}
+#curved-corner-bottomleft:before,
+#curved-corner-bottomright:before,
+#curved-corner-topleft:before,
+#curved-corner-topright:before {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  border-radius: 50%;
+}
+#curved-corner-bottomleft:before {
+  bottom: 0;
+  left: 0;
+  box-shadow: -70px 70px 0 0 var(--color-bg);
+}
+#curved-corner-bottomright:before {
+  bottom: 0;
+  right: 0;
+  box-shadow: 70px 70px 0 0 var(--color-bg);
+}
+#curved-corner-topleft:before {
+  top: 0;
+  left: 0;
+  box-shadow: -50px -50px 0 0 var(--color-bg);
+}
+#curved-corner-topright:before {
+  top: 0;
+  right: 0;
+  box-shadow: 70px -70px 0 0 var(--color-bg);
+}
+
+/* .circle {
+  width: 100px;
+  height: 100px;
+  background-color: #6fcdc5; 
+  border-radius: 50%;
+  grid-area: sticker1;
+  z-index: 50;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+} */
+
+/* .yellow-rectangle {
+  width: 200px;
+  height: 60px;
+  background-color: #f2d20d; 
+  z-index: 50;
+  position: absolute;
+  top: 150px;
+  left: 25%;
+  transform: rotate(-8deg);
+  border-radius: 10px;
+} */
+
+.yellow-rectangle {
+  width: 80%;
+  height: 15%;
+  background-color: #f2d20d; /* Background color for visualization */
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.orange-rectangle {
+  width: 80%;
+  height: 15%;
+  background-color: #f2a541; /* Background color for visualization */
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .orange-rectangle {
+  width: 200px;
+  height: 60px;
+  background-color: #f2a541; 
+  z-index: 50;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: rotate(8deg);
+  border-radius: 10px;
+} */
+
+/* .pink-rectangle {
+  width: 180px;
+  height: 60px;
+  background-color: #ec3e65; 
+  grid-area: sticker3;
+  z-index: 50;
+  position: absolute;
+  top: 100px;
+  left: 5%;
+  transform: rotate(8deg);
+  border-radius: 10px;
+} */
+
+.green-circle {
+  text-decoration: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 50;
+  background-color: #a5dc73; /* Background color for visualization */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pink-rectangle {
+  text-decoration: none;
+  width: 80%;
+  height: 15%;
+  background-color: #ec3e65; /* Background color for visualization */
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blue-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #73b8dc; /* Background color for visualization */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.purple-rectangle {
+  width: 70px;
+  height: 60px;
+  border-radius: 10%;
+  background-color: #a573dc; /* Background color for visualization */
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* .green-circle {
+  width: 110px;
+  height: 110px;
+  background-color: #a5dc73; 
+  grid-area: sticker6;
+  z-index: 50;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: rotate(-8deg);
+  border-radius: 50%;
+} */
+
+.sticker-container-narrow {
+  display: flex;
+  grid-area: gigs;
+  height: 100%;
+  width: 100%;
+}
+
+.column-1 {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Align items vertically in the center */
+}
+
+.column-2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align items vertically in the center */
+  align-items: center; /* Align items horizontally in the center */
+}
+
+.button-container {
+  display: none;
+}
+
+/* .sticker-container-narrow > div {
+  scale: 0.5;
+} */
+
+/* Make the contents half the size */
+/* Additional styles for the contents at this width */
+/* @media (max-width: 1370px) {
+  .container__position > * {
+     font-size: 5em;
+   
+  }
+} 
+
+/* @media only screen and (max-width: 767px) {
+  .sticker-container-wide {
+    display: none;
+  }
+} */
+
+/* @media only screen and (max-width: 768px) {
+  .sticker-container-narrow {
+    display: none;
+  }
+} */
+
+/* @media screen and (max-width: 540px) {
+  body {
+    --page-padding: 2.5rem;
+  }
+  .curved-corner {
+    display: none;
+  }
+  .container__works {
+    grid-template-areas:
+      "image .... ...."
+      "image .... ....";
+  }
+  .container {
+    grid-template-areas:
+      "year title menu"
+      "position position ...."
+      "works works works"
+      "skills2 skills2 ...."
+      "description description description"
+      "gigs gigs gigs";
+  }
+} */
+
+/* @media screen and (min-width: 539px) {
+  .container {
+    grid-template-areas:
+      "year title menu"
+      "position position ...."
+      "works works works"
+      "skills2 skills2 ...."
+      "description description description"
+      "gigs gigs gigs";
+  }
+  h1 {
+    font-size: 3.5em;
+  }
+
+} */
+
+/* @media screen and (min-width: 768px) {
+  .container {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    z-index: 1000;
+    width: 100%;
+    grid-row-gap: 1rem;
+    grid-column-gap: 2rem;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 5% 15% 40% 8% 8% auto;
+    grid-template-areas:
+      "year title menu"
+      "position position ...."
+      "works works ...."
+      "skills2 skills2 ...."
+      "description description description"
+      "gigs gigs gigs";
+  }
+  
+} */
+
+/* from here */
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 150px;
+}
+
+@media screen and (min-width: 481px) {
+  .container {
+    grid-template-areas:
+      "year title menu"
+      "position position position"
+      "works works works"
+      "description description description"
+      "skills2 skills2 skills2";
+
+    grid-template-rows: 5% 15% 25% 5% 5%;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container__works {
+    display: none;
+  }
+  h1 {
+    margin-left: 5%;
+  }
+  .sticker {
+    scale: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-secondary); /* Use the secondary color */
+    text-decoration: none;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .container__wide {
+    position: relative;
+    grid-area: works;
+    display: grid;
+    background-color: var(--color-secondary);
+    height: 100%;
+    width: 80%;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "sticker1 image2 sticker3"
+      "sticker4 image2 sticker6";
+  }
+  .container__wide::before,
+  .container__wide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .container__wide::before {
+    z-index: 1; /* Ensure it's above the curved-corner divs */
+    background-image: linear-gradient(
+        to right,
+        rgba(178, 169, 164, 0.3) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(178, 169, 164, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px; /* Adjust the size of the grid squares */
+  }
+
+  .container__wide::after {
+    z-index: 1; /* Ensure it's above the curved-corner divs */
+    background-image: linear-gradient(
+        to right,
+        rgba(178, 169, 164, 0.3) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(178, 169, 164, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px; /* Adjust the size of the grid squares */
+  }
+  .first-sticker-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2; /* Ensure buttons are above container__wide */
+  }
+
+  .sticker1 {
+    width: 150px;
+    height: 50px;
+    background-color: #f2d20d;
+    border-radius: 10px;
+    margin-left: 10%;
+    z-index: 50;
+    transform: rotate(-8deg);
+  }
+  .sticker2 {
+    width: 150px;
+    height: 50px;
+    background-color: #f2a541;
+    border: #f2a541;
+    border-radius: 10px;
+    z-index: 50;
+    transform: rotate(8deg);
+    margin-left: 50%;
+    outline: none;
+  }
+
+  .green-circle {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15%;
+    margin-left: 20%;
+    border-radius: 50%;
+    z-index: 50;
+    background-color: #a5dc73; /* Background color for visualization */
+  }
+
+  .sticker3 {
+    width: 150px;
+    height: 50px;
+    background-color: #ec3e65;
+    border-radius: 10px;
+    margin-left: 20%;
+    z-index: 50;
+    transform: rotate(15deg);
+  }
+
+  .blue-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #73b8dc; /* Background color for visualization */
+    z-index: 50;
+    margin-left: 50%;
+    margin-bottom: -15%;
+  }
+
+  .second-sticker-container {
+    position: absolute;
+    grid-area: sticker3;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .third-sticker-container {
+    position: absolute;
+    grid-area: sticker6;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .purple-square {
+    width: 65px;
+    height: 65px;
+    border-radius: 10%;
+    background-color: #a573dc; /* Background color for visualization */
+
+    transform: rotate(-15deg);
+    margin-left: 45%;
+    z-index: 50;
+  }
+
+  .image2 {
+    grid-area: image2;
+    background-image: url("./../images/me.JPG");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: right;
+  }
+
+  .sticker-container-narrow {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-areas:
+      "year title menu"
+      "position position position"
+      "works works works"
+      "description skills2 skills2";
+
+    grid-template-rows: 5% 25% 35% 5%;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  h1 {
+    font-size: 1.2em;
+    letter-spacing: 0em;
+    margin-left: 5%;
+  }
+  .container__works {
+    display: none;
+  }
+  .sticker {
+    scale: 1;
+  }
+
+  .container__wide {
+    position: relative;
+    grid-area: works;
+    display: grid;
+    background-color: var(--color-secondary);
+    height: 100%;
+    width: 75%;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "sticker1 image2 sticker3"
+      "sticker1 image2 sticker6";
+  }
+
+  .image2 {
+    grid-area: image2;
+    background-image: url("./../images/me.JPG");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: right;
+    border-radius: 5px;
+  }
+
+  .button {
+    margin: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .sticker-container-narrow {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1075px) {
+  h1 {
+    font-size: 1.8em;
+    margin-left: 5%;
+  }
+  .container {
+    grid-template-areas:
+      "year title menu"
+      "position position position"
+      "works works works"
+      "description skills2 skills2";
+
+    grid-template-rows: 5% 25% 45% 5%;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container__wide {
+    position: relative;
+    grid-area: works;
+    display: grid;
+    background-color: var(--color-secondary);
+    height: 100%;
+    width: 70%;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "sticker1 image2 sticker3"
+      "sticker1 image2 sticker6";
+  }
+  #curved-corner-bottomleft,
+  #curved-corner-bottomright,
+  #curved-corner-topleft,
+  #curved-corner-topright {
+    width: 10vw;
+    overflow: hidden;
+    position: relative;
+  }
+}
