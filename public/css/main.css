@@ -821,3 +821,9 @@ h1 {
     position: relative;
   }
 }
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
