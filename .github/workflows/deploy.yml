@@ -1,0 +1,24 @@
+name: Deploy to FTP
+
+on:   
+  push: 
+    branches: 
+      - main
+
+jobs: 
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout repository
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with: 
+          ftp-server: ftp.762.bad.mytemp.website
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public.html
