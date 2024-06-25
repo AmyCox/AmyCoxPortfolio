@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "build": "rimraf dist && mkdir dist && cp -r public/* dist/",
+    "build": "rimraf dist && mkdir dist && cp -r public dist/ && cp -r views dist/ && cp -r routes dist/ && cp app.js dist/app.js && cp package.json dist/package.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
