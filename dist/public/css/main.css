@@ -140,7 +140,7 @@ h1 {
 
 .container__works .image {
   grid-area: image;
-  background-image: url("../images/me.jpg");
+  background-image: url("/images/me.jpg");
   height: 100%;
   width: 100%;
   background-size: cover;
