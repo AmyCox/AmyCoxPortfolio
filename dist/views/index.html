@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+
+  <div class="container">
+    <div id="overlay" class="overlay">
+      <div class="overlay-content">
+          <span class="close" id="closeButton">&times;</span>
+          <img style="width: 20%" src="/images/iowna.png" alt="iowna Project Image">
+          <p style="color: black">Most recently working as a front end developer on the <a href="https://iowna.com/">iOWNA app</a> using react native and expo </p>
+      </div>
+  </div>
+    <div class="container__year">
+      <p>2024</p>
+    </div>
+    <div class="container__menu">
+      <!-- <a href="/about" target="_blank">about</a> -->
+      <a href="mailto:amy_cox@me.com?subject=Hey!">contact</a></div>
+    <div class="container__title">
+      <p>AMY COX</p>
+    </div>
+    <div class="container__position">
+      <h1>FULL STACK DEVELOPER</h1>
+    </div>
+    <p class="container__description">
+      I am a developer with front end experience in react native. </p>
+    <p class="skills2">SKILLS :: react native :: javascript :: typescript :: react :: jest :: python :: vue ::
+      greensock :: node ::
+    </p>
+    <div class="container__works">
+      
+    
+      <div class="image"></div>
+
+    </div>
+
+      <div class="container__wide">
+      
+        <!-- <div class="first-sticker-area">
+         
+        </div> -->
+        <div class="first-sticker-container">
+          <!-- <div class="sticker sticker1"> <p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">side8</p></div> -->
+          <a href="https://side8.io" target="_blank" class="sticker sticker1">
+            <p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">side8</p>
+        </a>
+          <button id="iownaButton" class="sticker sticker2"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">iOWNA</p></button>
+   
+          <a href="https://github.com/AmyCox" target="_blank" class="sticker green-circle"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">github</p></a>
+        </div>
+        <div class="image2"></div>
+        <div class="second-sticker-container">
+          <a href="https://codepen.io/amywritescode" target="_blank" class="sticker sticker3"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">codepen</p></a>
+          <a href="https://leetcode.com/u/amyleetcode/" target="_blank" class="sticker blue-circle"><p style="font-size: 1.5em;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">leetcode</p></a>
+        </div>
+        <div class="third-sticker-container">
+          
+          <a href="https://medium.com/@amywritescode/about" target="_blank" class="sticker purple-square"><p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">medium</p></a>
+        </div>
+
+     <div class="curved-corner" id="curved-corner-topright"></div>
+    <div class="curved-corner" id="curved-corner-bottomright"></div>
+</div>
+
+
+
+
+    <div class="sticker-container-narrow">
+      <div class="column-1">
+      <a href="https://side8.io" target="_blank" class="yellow-rectangle"><p style="color: black; font-size: 1.5em;">side8</p></a>
+
+      <!-- <button id="iownaButton" class="orange-rectangle"><p style="font-size: 2em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">iOWNA</p></button> -->
+
+      <a href="https://github.com/AmyCox" target="_blank" class="green-circle"><p style="color: black; font-size: 1.5em">github</p></a>
+
+    </div>
+    <div class="column-2">
+      <a href="https://codepen.io/amywritescode" target="_blank" class="pink-rectangle"> <p style="color: black; font-size: 1.5em">codepen</p></a>
+      <a href="https://leetcode.com/u/amyleetcode/" target="_blank" class="blue-circle"><p style="color: black; font-size: 1.5em">leetcode</p></a>
+      <a href="https://medium.com/@amywritescode/about" target="_blank" class="purple-rectangle"><p style="color: black; font-size: 1.2em">medium</p></a>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/87ad5d7072.js" crossorigin="anonymous"></script>
+<script>
+  document.getElementById("iownaButton").addEventListener("click", function() {
+    console.log('gets here')
+    document.getElementById("overlay").style.display = "block";
+});
+
+document.getElementById("closeButton").addEventListener("click", function() {
+    document.getElementById("overlay").style.display = "none";
+});
+</script>
+</body>
+
+</html>
